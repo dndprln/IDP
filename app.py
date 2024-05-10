@@ -276,12 +276,12 @@ else:
         st.title("Input Features")
 
         # Input field for pH of water
-        ph_of_water = st.slider("pH of Water", min_value=0.1, max_value=14.0, value=7.0, step=0.1)
         habitat = st.slider("Habitat", min_value=0, max_value=4, value=2, step=1)  # Assuming habitat values from 0 to 4
+        ph_of_water = st.slider("pH of Water", min_value=0.1, max_value=14.0, value=7.0, step=0.1)
 
         # Make prediction when the user clicks the button
         if st.button("Predict Life Span"):
-            predicted_life_span = predict_life_span(ph_of_water, habitat)
+            predicted_life_span = predict_life_span(habitat, ph_of_water)
             st.write(f"Predicted Life Span: {predicted_life_span:.2f} years")
 
     # Run the app
