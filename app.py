@@ -259,11 +259,11 @@ else:
         model = pickle.load(f)
 
     # Function to predict life span based on input features
-    def predict_life_span(ph_of_water, habitat):
+    def predict_life_span(habitat, ph_of_water):
         # Create a DataFrame from input data
         input_data = pd.DataFrame({
-            'ph_of_water': [ph_of_water],
-            'habitat': [habitat]
+            'habitat': [habitat],
+            'ph_of_water': [ph_of_water]
         })
 
         # Make prediction
